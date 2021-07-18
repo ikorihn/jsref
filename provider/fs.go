@@ -1,12 +1,12 @@
 package provider
 
 import (
-	"encoding/json"
 	"net/url"
 	"os"
 	"path/filepath"
 	"strings"
 
+	"github.com/goccy/go-yaml"
 	"github.com/lestrrat-go/pdebug"
 	"github.com/pkg/errors"
 )
@@ -59,7 +59,7 @@ func (fp *FS) Get(key *url.URL) (out interface{}, err error) {
 	defer f.Close()
 
 	var x interface{}
-	dec := json.NewDecoder(f)
+	dec := yaml.NewDecoder(f)
 	if err := dec.Decode(&x); err != nil {
 		return nil, errors.Wrap(err, "failed to parse JSON local resource")
 	}

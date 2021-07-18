@@ -1,12 +1,12 @@
 package provider
 
 import (
-	"encoding/json"
 	"net/http"
 	"net/url"
 	"strings"
 	"time"
 
+	"github.com/goccy/go-yaml"
 	"github.com/lestrrat-go/pdebug"
 	"github.com/pkg/errors"
 )
@@ -49,7 +49,7 @@ func (hp *HTTP) Get(key *url.URL) (interface{}, error) {
 	}
 	defer res.Body.Close()
 
-	dec := json.NewDecoder(res.Body)
+	dec := yaml.NewDecoder(res.Body)
 
 	var x interface{}
 	if err := dec.Decode(&x); err != nil {

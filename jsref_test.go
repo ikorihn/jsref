@@ -14,8 +14,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/lestrrat-go/jsref"
-	"github.com/lestrrat-go/jsref/provider"
+	"github.com/r57ty7/jsref"
+	"github.com/r57ty7/jsref/provider"
 	"github.com/stretchr/testify/assert"
 )
 
