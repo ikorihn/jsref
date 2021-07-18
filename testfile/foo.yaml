@@ -1,0 +1,5 @@
+foo:
+  - bar
+  - "$ref": "#/sub"
+  - "$ref": file://./sub.yaml#/other
+sub: baz

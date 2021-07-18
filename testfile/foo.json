@@ -1,0 +1,12 @@
+{
+  "foo": [
+    "bar",
+    {
+      "$ref": "#/sub"
+    },
+    {
+      "$ref": "file://./sub.json#/other"
+    }
+  ],
+  "sub": "baz"
+}
